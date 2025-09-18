@@ -43,7 +43,6 @@
             border-radius: 8px;
             border: 2px solid #FFD700;
         }
-        /* kleine responsive Anpassung */
         @media (max-width: 600px) {
             .bilder img { width: 45%; }
         }
@@ -54,7 +53,7 @@
         <h1>Kürbis-Welt</h1>
         <p>Butternut und Hokkaido zählen zu den beliebtesten Speisekürbissen. Außerdem eignen sich viele Zierkürbisse hervorragend für kreative Deko-Ideen.</p>
 
-        <!-- Deine Rezepte (Butternut + Hokkaido) -->
+        <!-- Butternut -->
         <h2>Butternut-Kürbis Rezepte</h2>
         <h3>1. Butternut-Kürbis-Suppe</h3>
         <ul>
@@ -66,7 +65,7 @@
             <li>1 TL Currypulver, Salz, Pfeffer</li>
         </ul>
         <p>Alle Zutaten kochen, pürieren und abschmecken.</p>
-
+        
         <h3>2. Ofengerösteter Butternut-Kürbis</h3>
         <ul>
             <li>1 Butternut-Kürbis, in Spalten</li>
@@ -75,7 +74,7 @@
             <li>Walnüsse, Salz, Pfeffer</li>
         </ul>
         <p>Backen, mit Honig und Feta servieren.</p>
-
+        
         <h3>3. Pasta mit Butternut-Kürbis</h3>
         <ul>
             <li>250 g Pasta</li>
@@ -86,6 +85,7 @@
         </ul>
         <p>Kürbis anbraten, mit Sahne köcheln, mit Pasta & Parmesan servieren.</p>
 
+        <!-- Hokkaido -->
         <h2>Hokkaido-Kürbis Rezepte</h2>
         <h3>1. Hokkaido-Kürbis aus dem Ofen</h3>
         <ul>
@@ -112,23 +112,20 @@
         </ul>
         <p>Alle Zutaten verrühren, backen und genießen.</p>
 
-        <!-- Collage (lokale Datei) mit Fallback auf Wikimedia-Bilder -->
+        <!-- Collage -->
         <h2>Ideen zur Dekoration mit Zierkürbissen</h2>
         <p>Wenn die lokale Datei <code>zierkuerbis_collage.jpg</code> vorhanden ist, wird sie angezeigt. Andernfalls werden Beispielbilder geladen.</p>
 
-        <!-- Lokale Collage (bitte hochladen: zierkuerbis_collage.jpg) -->
         <img id="collage" class="img-collage"
              src="zierkuerbis_collage.jpg"
              alt="Collage mit Zierkürbis-Deko"
              onerror="document.getElementById('fallback').style.display='flex'; this.style.display='none';">
 
-        <!-- Fallback (öffentliche Bilder) -->
         <div id="fallback" class="bilder" style="display:none;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Cucurbita_pepo_pumpkins_decorative.JPG" alt="Bunte Zierkürbisse">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Pumpkin_decoration_autumn.jpg" alt="Herbstliche Kürbisdeko">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Pumpkin_Table_Decoration.jpg" alt="Kürbisse als Tischdeko">
         </div>
-
     </div>
 </body>
 </html>
