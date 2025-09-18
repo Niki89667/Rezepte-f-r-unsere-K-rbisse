@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Kürbis & Rezepte</title>
     <style>
         body {
@@ -11,26 +11,31 @@
             color: white;
             text-align: center;
             padding: 20px;
+            margin: 0;
         }
         .container {
             max-width: 900px;
-            margin: auto;
-            background: rgba(0, 0, 0, 0.7);
+            margin: 20px auto;
+            background: rgba(0,0,0,0.7);
             padding: 20px;
             border-radius: 10px;
         }
-        h1, h2 {
-            color: #FFD700;
-        }
-        ul {
-            text-align: left;
+        h1, h2 { color: #FFD700; margin-top: 0; }
+        ul { text-align: left; }
+        .img-collage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            margin-top: 15px;
+            display: block;
         }
         .bilder {
             display: flex;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .bilder img {
             width: 250px;
@@ -38,14 +43,18 @@
             border-radius: 8px;
             border: 2px solid #FFD700;
         }
+        /* kleine responsive Anpassung */
+        @media (max-width: 600px) {
+            .bilder img { width: 45%; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Kürbis-Welt</h1>
         <p>Butternut und Hokkaido zählen zu den beliebtesten Speisekürbissen. Außerdem eignen sich viele Zierkürbisse hervorragend für kreative Deko-Ideen.</p>
-        
-        <!-- Butternut -->
+
+        <!-- Deine Rezepte (Butternut + Hokkaido) -->
         <h2>Butternut-Kürbis Rezepte</h2>
         <h3>1. Butternut-Kürbis-Suppe</h3>
         <ul>
@@ -57,5 +66,69 @@
             <li>1 TL Currypulver, Salz, Pfeffer</li>
         </ul>
         <p>Alle Zutaten kochen, pürieren und abschmecken.</p>
-        
-        <
+
+        <h3>2. Ofengerösteter Butternut-Kürbis</h3>
+        <ul>
+            <li>1 Butternut-Kürbis, in Spalten</li>
+            <li>3 EL Olivenöl, 1 TL Paprikapulver</li>
+            <li>1 TL Honig, 100 g Feta</li>
+            <li>Walnüsse, Salz, Pfeffer</li>
+        </ul>
+        <p>Backen, mit Honig und Feta servieren.</p>
+
+        <h3>3. Pasta mit Butternut-Kürbis</h3>
+        <ul>
+            <li>250 g Pasta</li>
+            <li>1/2 Butternut-Kürbis, gewürfelt</li>
+            <li>1 Zwiebel, 2 EL Butter</li>
+            <li>100 ml Sahne, 50 g Parmesan</li>
+            <li>6–8 Blätter Salbei</li>
+        </ul>
+        <p>Kürbis anbraten, mit Sahne köcheln, mit Pasta & Parmesan servieren.</p>
+
+        <h2>Hokkaido-Kürbis Rezepte</h2>
+        <h3>1. Hokkaido-Kürbis aus dem Ofen</h3>
+        <ul>
+            <li>1 Hokkaido, in Spalten (Schale essbar!)</li>
+            <li>2 EL Olivenöl, 1 TL Rosmarin</li>
+            <li>Salz, Pfeffer</li>
+        </ul>
+        <p>Im Ofen knusprig backen, als Beilage servieren.</p>
+
+        <h3>2. Hokkaido-Risotto</h3>
+        <ul>
+            <li>200 g Risotto-Reis</li>
+            <li>1/2 Hokkaido, gewürfelt</li>
+            <li>750 ml Gemüsebrühe</li>
+            <li>1 Zwiebel, Parmesan, Butter</li>
+        </ul>
+        <p>Kürbiswürfel im Risotto mitkochen, cremig rühren, mit Parmesan verfeinern.</p>
+
+        <h3>3. Hokkaido-Kuchen</h3>
+        <ul>
+            <li>300 g Hokkaido, gekocht & püriert</li>
+            <li>200 g Mehl, 100 g Zucker, 2 Eier</li>
+            <li>1 TL Zimt, 1/2 TL Muskat, Backpulver</li>
+        </ul>
+        <p>Alle Zutaten verrühren, backen und genießen.</p>
+
+        <!-- Collage (lokale Datei) mit Fallback auf Wikimedia-Bilder -->
+        <h2>Ideen zur Dekoration mit Zierkürbissen</h2>
+        <p>Wenn die lokale Datei <code>zierkuerbis_collage.jpg</code> vorhanden ist, wird sie angezeigt. Andernfalls werden Beispielbilder geladen.</p>
+
+        <!-- Lokale Collage (bitte hochladen: zierkuerbis_collage.jpg) -->
+        <img id="collage" class="img-collage"
+             src="zierkuerbis_collage.jpg"
+             alt="Collage mit Zierkürbis-Deko"
+             onerror="document.getElementById('fallback').style.display='flex'; this.style.display='none';">
+
+        <!-- Fallback (öffentliche Bilder) -->
+        <div id="fallback" class="bilder" style="display:none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Cucurbita_pepo_pumpkins_decorative.JPG" alt="Bunte Zierkürbisse">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Pumpkin_decoration_autumn.jpg" alt="Herbstliche Kürbisdeko">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Pumpkin_Table_Decoration.jpg" alt="Kürbisse als Tischdeko">
+        </div>
+
+    </div>
+</body>
+</html>
